@@ -13,6 +13,8 @@ Complete Flutter Application with Riverpod & Freezed + Dio for API REST.
 - Multi Language
 - Exchange Selection
 - Favorite Pair
+- News
+- Exchanges
 
 ### Stack
 - Flutter 2.10.2
