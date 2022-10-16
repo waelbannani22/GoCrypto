@@ -32,12 +32,6 @@ Future<void> main() async {
     container.read(clientProvider).httpClientAdapter = dioAdapter;
   });
 
-  test('Dio loads API_KEY from .env', () {
-    final container = ProviderContainer();
-    final headers = container.read(clientProvider).options.headers;
-    expect(headers['X-CW-API-Key'], dotenv.env['API_KEY']);
-    // stuff
-  });
   group('getPairs', () {
     test('getPairsSucess', () async {
       List<Pair>? pairs = MarketResponse.fromJson(ApiData.pairs).result;
