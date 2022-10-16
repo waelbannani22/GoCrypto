@@ -14,7 +14,7 @@ class Authentification {
 
   Future<String> login(String email, String password) async {
     final response = await http.post(
-      Uri.parse('http://localhost:3000/signin'),
+      Uri.parse('https://gocrypto.herokuapp.com/signin'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -34,10 +34,13 @@ class Authentification {
       // then parse the JSON.
       return "connected";
     } else if (response.statusCode == 405) {
+      print("not connected" + response.statusCode.toString());
       return "password incorrect";
     } else if (response.statusCode == 404) {
+      print("not connected" + response.statusCode.toString());
       return "no profile found";
     } else {
+      print("not connected" + response.statusCode.toString());
       return "error";
     }
   }
@@ -45,7 +48,7 @@ class Authentification {
   Future<String> signup(
       String email, String password, String username, String phone) async {
     final response = await http.post(
-      Uri.parse('http://localhost:3000/signup'),
+      Uri.parse('https://gocrypto.herokuapp.com/signup'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -73,7 +76,7 @@ class Authentification {
   //news api provider
   Future<List<News>> newsresponse() async {
     final response = await http.get(
-        Uri.parse('http://localhost:3000/newsProvider'),
+        Uri.parse('https://gocrypto.herokuapp.com/newsProvider'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         });
@@ -94,7 +97,7 @@ class Authentification {
 
   Future<List<Quote>> classments() async {
     final response = await http.get(
-        Uri.parse('http://localhost:3000/classment'),
+        Uri.parse('https://gocrypto.herokuapp.com/classment'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         });
@@ -114,7 +117,7 @@ class Authentification {
 
   Future<List<Quote>> classmentsdata() async {
     final response = await http.get(
-        Uri.parse('http://localhost:3000/classmentdata'),
+        Uri.parse('https://gocrypto.herokuapp.com/classmentdata'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         });
@@ -134,7 +137,7 @@ class Authentification {
 
   Future<List<Exchanges>> exchangesData() async {
     final response = await http.get(
-        Uri.parse('http://localhost:3000/exchanges'),
+        Uri.parse('https://gocrypto.herokuapp.com/exchanges'),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         });
