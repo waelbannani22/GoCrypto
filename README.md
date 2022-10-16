@@ -31,7 +31,7 @@ Complete Flutter Application with Riverpod & Freezed + Dio for API REST.
 
 Download project
 ```bash
-git clone https://github.com/salvadordeveloper/flutter-crypto-app
+git clone https://github.com/waelbannani22/GoCrypto.git
 ```
 
 Get flutter dependencies
